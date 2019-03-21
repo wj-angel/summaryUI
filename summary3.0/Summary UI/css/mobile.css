@@ -1,0 +1,211 @@
+body,p,dl,dd,ul,ol,li,div,h1,h2,h3,h4,h5,h6,form,input,table,tr,td{
+    margin:0;
+    padding:0;
+}
+a{
+  text-decoration: none;
+}
+img{
+  border: 0;
+}
+body{
+  background: url(../imgs/bg3.png);
+  background-size: cover;
+}
+/*header*/
+header{
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; 
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background:url(../imgs/bg.jpg);
+  background-size: cover;
+}
+header img{
+  width: 50px;
+  height: 50px;
+  margin-top:5px;
+  margin-left: 50px;
+  margin-right: 20px;
+  position: relative; 
+  transform-style: preserve-3d;
+  animation: box_ani 6s linear infinite;
+}
+header .ui{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: cyan;
+} 
+
+@keyframes box_ani{
+  0%{
+    transform:rotateZ(0deg);
+  }
+  100%{
+    transform:rotateZ(360deg);
+  }
+}
+header .anli{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 60px;
+    left: -30px;
+    background: #496e9a;
+    height: 0px;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
+}
+header .anli a{
+    width: 100px;
+    display: block;
+    line-height: 40px;
+    border-bottom: none;
+}
+header .anli a:hover{
+    border-bottom: none;
+}
+.nav{
+  float: right;
+  margin-right: 30px;
+}
+.nav a{
+  float: left;
+  padding: 0 20px;
+  height: 60px;
+  color: white;
+  font-size: 17px;
+  text-align:center;
+  line-height: 60px;
+}
+.nav a:hover{
+  color: #1dafec;
+  border-bottom: 3px solid #1dafec;
+}
+.nav h5{
+  float: left;
+  padding: 0 20px;
+  height: 60px;
+  color: white;
+  font-size: 17px;
+  text-align:center;
+  line-height: 60px;
+  font-weight: 100;
+  position: relative;
+}
+.nav h5:hover{
+  color: #1dafec;
+  border-bottom: 3px solid #1dafec;
+}
+.nav h5:hover .anli{
+  height: 120px;
+  transition: all 2s;
+}
+/*section*/
+section{
+	margin-top: 63px;
+	width: 100%;
+}
+.app-store{
+	padding: 50px 0;
+    box-sizing: border-box;
+}
+.app-store .title h1{
+	font-weight: normal;
+    text-align: center;
+    font-size: 38px;
+    color: #fff;
+    height: 50px;
+}
+.app-store .title h1{
+	background-image:-webkit-linear-gradient(bottom,red,#fd8403,yellow); 
+    -webkit-background-clip:text; 
+    -webkit-text-fill-color:transparent; 
+}
+.app-show{
+	width: 1056px;
+    /*position: relative;*/ 
+    margin: 0 auto;
+}
+.show-list{
+	overflow: hidden;
+    padding: 0 20px;
+    margin: 25px 0;
+    text-align: justify;
+}
+.list-content{
+	position: relative;
+	float: left;
+    margin: 25px 20px;
+    width: 214px;
+    border-radius: 5px;
+    height: 390px;
+    background: #fff;
+    text-align: center;
+    background-image: url(../imgs/mbj.png);
+    background-size: 214px 380px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.list-content img{
+	padding-top: 10px;
+	width: 100%;
+	height: 100%;
+}
+.list-content a:hover .show{
+	display: block;
+}
+.list-content a span{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 30px;
+	background:purple;
+	opacity: .9;
+	color: #000;
+	font-size: 16px;
+	line-height: 30px;
+	text-align: center;
+}
+.show{
+	display: none;
+	position: absolute;
+	width: 214px;
+	height: 214px;
+	line-height: 200px;
+	background-image: url(../imgs/timg.png);
+	background-size: 214px 214px;
+	background-repeat: no-repeat;
+	top: 80px;
+	font-size: 24px;
+	-webkit-animation-name: fadeIn; 
+	-webkit-animation-duration: 1s; 
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-delay: 0s; 
+}
+
+@-webkit-keyframes fadeIn {
+0% {
+opacity: 0; /*初始状态 透明度为0*/
+}
+35% {
+opacity: 0.5; /*中间状态 透明度为0*/
+}
+50% {
+opacity: 0.7; /*中间状态 透明度为0*/
+}
+80% {
+opacity: 0.9; /*中间状态 透明度为0*/
+}
+100% {
+opacity: 1; /*结尾状态 透明度为1*/
+}

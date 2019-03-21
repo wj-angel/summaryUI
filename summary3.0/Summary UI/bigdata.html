@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Summary UI</title> 
+<link rel="shortcut icon" href="imgs/logo.ico" type="image/x-icon"/>
+<style type="text/css">
+html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    background: url("imgs/body1.jpg");
+    background-size: cover;
+}
+a{
+    color:#09f;
+    text-decoration: none;
+}
+#back_to_camera{
+    background:rgba(255,255,255,.9);
+    clear:both;
+    display:block;
+    height:40px;
+    line-height:40px;
+    padding:20px;
+    position:relative;
+    z-index:1;
+}
+.fluid_container{
+    width: 100%;
+    height:100%;
+    position:fixed;
+    top:63px;
+    z-index:0;
+}
+#camera_wrap_4{
+    width: 900px;
+    height:500px;
+    margin-bottom:0!important;
+    position:fixed;
+    top:50%;
+    left: 50%;
+    margin-left: -450px;
+    margin-top: -250px;
+}
+.camera_bar{
+    z-index:2;
+}
+.camera_thumbs{
+    margin-top:-100px;
+    position:relative;
+    z-index:1;
+}
+.camera_thumbs_cont{
+    border-radius:0;
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+}
+.camera_overlayer{
+    opacity:.1;
+}
+.camera_thumbs_cont ul li > img {
+    width: 100px;
+    height: 75px;
+}
+/*header*/
+header{
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; 
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+header img{
+  width: 50px;
+  height: 50px;
+  margin-top:5px;
+  margin-left: 50px;
+  margin-right: 20px;
+  position: relative; 
+  transform-style: preserve-3d;
+  animation: box_ani 6s linear infinite;
+}
+header .ui{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: cyan;
+} 
+
+@keyframes box_ani{
+  0%{
+    transform:rotateZ(0deg);
+  }
+  100%{
+    transform:rotateZ(360deg);
+  }
+}
+header .anli{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 60px;
+    left: -30px;
+    background: #496e9a;
+    height: 0px;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
+}
+header .anli a{
+    width: 100px;
+    display: block;
+    line-height: 40px;
+    border-bottom: none;
+}
+header .anli a:hover{
+    border-bottom: none;
+}
+.nav{
+  float: right;
+  margin-right: 30px;
+}
+.nav a{
+  float: left;
+  padding: 0 20px;
+  height: 60px;
+  color: white;
+  font-size: 17px;
+  text-align:center;
+  line-height: 60px;
+}
+.nav a:hover{
+  color: #1dafec;
+  border-bottom: 3px solid #1dafec;
+}
+.nav h5{
+  float: left;
+  padding: 0 20px;
+  height: 60px;
+  color: white;
+  font-size: 17px;
+  text-align:center;
+  line-height: 60px;
+  font-weight: 100;
+  position: relative;
+  margin: 0;
+}
+.nav h5:hover{
+  color: #1dafec;
+  border-bottom: 3px solid #1dafec;
+}
+.nav h5:hover .anli{
+  height: 120px;
+  transition: all 2s;
+}
+footer{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    bottom: 20px;
+}
+footer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer img{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+footer h2{
+    font-size: 20px;
+    color: black;
+}
+</style>
+
+<link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'> 
+<script type='text/javascript' src='js/jquery.min.js'></script>
+<script type='text/javascript' src='js/jquery.mobile.customized.min.js'></script>
+<script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
+<script type='text/javascript' src='js/camera.min.js'></script> 
+<script type="text/javascript">
+jQuery(function(){
+	jQuery('#camera_wrap_4').camera({
+		height: 'auto',
+		loader: 'bar',
+		pagination: false,
+		thumbnails: true,
+		hover: false,
+		opacityOnGrid: false,
+		imagePath: 'imgs/'
+	});
+});
+</script>
+ 
+</head>
+<body>
+    <header>
+        <a class="ui" href="index.html"><img src="imgs/logo.png"/>summary</a>
+        <div class="nav">
+            <a href="index.html">首页</a>
+            <a href="http://localhost:8080/">组件库</a>
+            <h5>案例
+                <div class="anli">
+                    <a href="pc.html">PC</a>
+                    <a href="yidong.html">移动</a>
+                    <a href="xiaochengxu.html">小程序</a>
+                </div>
+            </h5>
+            <a href="##">后台管理</a>
+            <a href="bigdata.html" style="color:#1989fa">大数据展示</a>
+            <a href="team.html">团队</a>
+        </div>  
+    </header>
+	<div class="fluid_container">
+        <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">           
+            <div data-thumb="imgs/slides/b1.png" data-src="imgs/slides/b1.png">
+            </div>                  
+            <div data-thumb="imgs/slides/b2.png" data-src="imgs/slides/b2.png">
+            </div>
+            <div data-thumb="imgs/slides/b3.png" data-src="imgs/slides/b3.png">
+            </div>
+            <div data-thumb="imgs/slides/b4.png" data-src="imgs/slides/b4.png">
+            </div>
+            <div data-thumb="imgs/slides/b5.png" data-src="imgs/slides/b5.png">
+            </div>
+            <div data-thumb="imgs/slides/b6.png" data-src="imgs/slides/b6.png">
+            </div>
+        </div><!-- #camera_wrap_3 -->
+
+    </div><!-- .fluid_container -->
+    <footer>
+        <a href="https://github.com/SummaryUi/BigDataDisplay.github.io"><h2>gitHub</h2><img src="imgs/github.png"><h2>案例展示</h2></a>
+    </footer>
+</body> 
+</html>
